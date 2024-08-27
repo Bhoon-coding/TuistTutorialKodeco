@@ -31,23 +31,16 @@
 /// THE SOFTWARE.
 
 import SwiftUI
-import FetchImage
+import Kingfisher
 
 struct ImageView: View {
-  let url: URL
-
-  @StateObject private var image = FetchImage()
-
-  var body: some View {
-    ZStack {
-      Rectangle().fill(Color.gray)
-
-      image.view?
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .clipped()
+    let url: URL
+    
+    var body: some View {
+        ZStack {
+            Rectangle().fill(Color.gray)
+            KFImage(url)
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 16))
     }
-    .onAppear { image.load(url) }
-    .onDisappear { image.reset() }
-  }
 }

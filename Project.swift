@@ -13,6 +13,13 @@ let targetSettigns: Settings = .settings(configurations: [
 let project = Project(
     name: projectName,
     organizationName: "com.bhoon.tuistMovieInfo",
+    // package 추가
+    packages: [
+        .package(
+            url: "https://github.com/onevcat/Kingfisher", // url 입력
+            .upToNextMajor(from: "7.12.0") // 다음 major까지 해당 버전을 사용하게 설정
+        )
+    ],
     settings: projectSettings,
     targets: [
         Target(
@@ -27,7 +34,9 @@ let project = Project(
                 .project(
                     target: "NetworkKit",
                     path: .relativeToManifest("NetworkKit")
-                )
+                ),
+                .package(product: "Kingfisher")
+//                .external(name: "Kingfisher")
             ],
             settings: targetSettigns
         ),

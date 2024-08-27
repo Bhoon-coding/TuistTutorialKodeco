@@ -39,7 +39,13 @@ struct ContentView: View {
   var body: some View {
     NavigationView {
       List(viewModel.movieList, id: \.id) { movie in
-        Text("\(movie.title)")
+          HStack {
+              if let url = movie.posterURL {
+                  ImageView(url: url)
+                      .frame(width: 92, height: 138)
+              }
+            Text("\(movie.title)")
+          }
       }
       .navigationTitle("Movie Info")
     }
