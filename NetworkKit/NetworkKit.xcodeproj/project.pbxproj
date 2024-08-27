@@ -31,10 +31,12 @@
 		20584135C03AAB658CDDB004 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		576DDC0145355BE888E56950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		720427BCC47577CF3FA8B368 /* MovieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResponse.swift; sourceTree = "<group>"; };
+		7A3BC22B7EAD38AC5956D4DA /* NetworkKitTarget.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = NetworkKitTarget.xcconfig; sourceTree = "<group>"; };
 		8D16F42116C9DD2902A0175D /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E550AF08DA9CF774D4CAC5D /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		B29C1A268A00FDF5A8B9CBC0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		BBB740A84780C27509546307 /* MovieFetchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFetchError.swift; sourceTree = "<group>"; };
+		C5D707D8647257876ED8A833 /* NetworkKitProject.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = NetworkKitProject.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,15 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		A4E05D224C56B05D4E04F5AB /* config */ = {
+			isa = PBXGroup;
+			children = (
+				C5D707D8647257876ED8A833 /* NetworkKitProject.xcconfig */,
+				7A3BC22B7EAD38AC5956D4DA /* NetworkKitTarget.xcconfig */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
 		CEAC9E41B56E8FC566778687 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +99,7 @@
 		E30427D2759F6CE2F3BF76DD /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				A4E05D224C56B05D4E04F5AB /* config */,
 				5AA3CF937D74129195AE6DAB /* NetworkKit */,
 			);
 			name = Project;
@@ -118,7 +130,6 @@
 			buildPhases = (
 				FFB50B8FC5F7881326CE970A /* Sources */,
 				4AED24F98CBD844FD313189C /* Resources */,
-				4DF321397CAAED167C94A54F /* Embed Precompiled Frameworks */,
 				996AF320FE49399744830ED0 /* Embed Frameworks */,
 				CD20C4B7FB849B4F9FE33094 /* Frameworks */,
 			);
@@ -137,12 +148,12 @@
 		354C1C28EB130ABD6428A2E9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = raywenderlich;
+				ORGANIZATIONNAME = "Ray Wenderlich";
 				TargetAttributes = {
 				};
 			};
 			buildConfigurationList = AF6470F716A4A8AD9C74B14B /* Build configuration list for PBXProject "NetworkKit" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -169,23 +180,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4DF321397CAAED167C94A54F /* Embed Precompiled Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Precompiled Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo \"Skipping, nothing to be embedded.\"";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		FFB50B8FC5F7881326CE970A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -204,8 +198,10 @@
 /* Begin XCBuildConfiguration section */
 		631FE0259D2A92F5C8234DED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5D707D8647257876ED8A833 /* NetworkKitProject.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -228,6 +224,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -260,8 +257,10 @@
 		};
 		D6063C40E7A4EEEE43C8467C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5D707D8647257876ED8A833 /* NetworkKitProject.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -284,6 +283,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -310,6 +310,7 @@
 		};
 		DBD07547D4F1F21CD71CED77 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A3BC22B7EAD38AC5956D4DA /* NetworkKitTarget.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -324,15 +325,14 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.networkkit;
+				PRODUCT_BUNDLE_IDENTIFIER = io.tuist.starterManifests;
 				PRODUCT_NAME = NetworkKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.4;
+				SWIFT_VERSION = 5.9.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -341,6 +341,7 @@
 		};
 		FA8BC43AC0A6573CCEBB4774 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A3BC22B7EAD38AC5956D4DA /* NetworkKitTarget.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -355,14 +356,13 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.networkkit;
+				PRODUCT_BUNDLE_IDENTIFIER = io.tuist.starterManifests;
 				PRODUCT_NAME = NetworkKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 5.4;
+				SWIFT_VERSION = 5.9.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

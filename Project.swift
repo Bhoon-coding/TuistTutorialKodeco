@@ -1,11 +1,19 @@
 import ProjectDescription
 
 let projectName: String = "MovieInfo"
+let projectSettings: Settings = .settings(configurations: [
+    .debug(name: "Debug", xcconfig: "config/MovieInfoProject.xcconfig"),
+    .release(name: "Release", xcconfig: "config/MovieInfoProject.xcconfig"),
+])
+let targetSettigns: Settings = .settings(configurations: [
+    .debug(name: "Debug", xcconfig: "config/MovieInfoTarget.xcconfig"),
+    .release(name: "Release", xcconfig: "config/MovieInfoTarget.xcconfig")
+])
 
 let project = Project(
     name: projectName,
     organizationName: "com.bhoon.tuistMovieInfo",
-    settings: nil,
+    settings: projectSettings,
     targets: [
         Target(
             name: projectName,
@@ -15,8 +23,13 @@ let project = Project(
             infoPlist: .default,
             sources: ["MovieInfo/Source/**"],
             resources: "MovieInfo/Resources/**",
-            dependencies: [],
-            settings: nil
+            dependencies: [
+                .project(
+                    target: "NetworkKit",
+                    path: .relativeToManifest("NetworkKit")
+                )
+            ],
+            settings: targetSettigns
         )
     ]
 )
