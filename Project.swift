@@ -30,6 +30,18 @@ let project = Project(
                 )
             ],
             settings: targetSettigns
+        ),
+        // Test 추가
+        Target(
+            name: "MovieInfoTests",
+            platform: .iOS,
+            product: .unitTests,
+            bundleId: "com.bhoon.tuistMovieInfoTests",
+            infoPlist: "MovieInfoTests/Resources/Info.plist",
+            sources: ["MovieInfoTests/Source/**"],
+            dependencies: [
+                .target(name: "MovieInfo")
+            ]
         )
     ]
 )

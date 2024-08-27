@@ -28,6 +28,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "71C200A0AB47BE0A56C57ABB"
+               BuildableName = "MovieInfoTests.xctest"
+               BlueprintName = "MovieInfoTests"
+               ReferencedContainer = "container:MovieInfo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "DC93B437E5CFD867C043748F"
                BuildableName = "NetworkKit.framework"
                BlueprintName = "NetworkKit"
@@ -42,6 +56,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "71C200A0AB47BE0A56C57ABB"
+               BuildableName = "MovieInfoTests.xctest"
+               BlueprintName = "MovieInfoTests"
+               ReferencedContainer = "container:MovieInfo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
